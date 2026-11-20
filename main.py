@@ -184,8 +184,6 @@ def crear_producto(producto: Producto):
     
     return{"Esto recibe el endpoint":producto}
 
-    pass
-
 
 @app.put("/productos/{producto_id}")
 def reemplazar_producto(
