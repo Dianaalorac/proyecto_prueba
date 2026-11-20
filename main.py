@@ -175,21 +175,13 @@ def crear_producto(producto: Producto):
     df,sha = get_csv()
 
     df = pd.concat([df, pd.DataFrame([producto])], ignore_index=True)
-    if "id" not in df.columns():
-        nuevo_id = 1
-    else:
-        nuevo_id =int(df["id"].max() +1
+ 
+    nuevo_id =int(df["id"].max() +1
     nuevo_producto = producto.model_dump()
     nuevo_producto["id"] = nuevo_id
     
-    
     save_csv(df,sha)
     
-    
-    # 4. Agregarlo al DataFrame
-
-    
-
     return{"Esto recibe el endpoint":producto}
 
     pass
